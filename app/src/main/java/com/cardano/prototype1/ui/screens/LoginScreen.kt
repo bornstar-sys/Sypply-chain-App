@@ -25,6 +25,7 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.cardano.prototype1.R
 
@@ -38,6 +39,8 @@ fun LoginScreen(
     navController: NavController,
     onLoginClick : () -> Unit
 ) {
+
+    val viewModel: AuthViewModel = viewModel()
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -252,5 +255,9 @@ fun SocialIcon(color: Color) {
 @Preview(showSystemUi = true)
 @Composable
 fun LoginPreview(){
-    //LoginScreen()
+    val navController = androidx.navigation.compose.rememberNavController()
+    LoginScreen(
+    navController = navController,
+        onLoginClick = {}
+    )
 }

@@ -24,7 +24,7 @@ fun AppNavigation(){
         composable(Screen.Dashboard.route) { DashboardScreen(navController) }
         composable("result/{data}") { backStackEntry ->
             val data = backStackEntry.arguments?.getString("data")
-            ResultScreen(data)
+            //ResultScreen(data)
         }
 
     }
