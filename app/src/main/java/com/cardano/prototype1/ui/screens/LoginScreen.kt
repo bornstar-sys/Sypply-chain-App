@@ -41,6 +41,8 @@ fun LoginScreen(
 ) {
 
     val viewModel: AuthViewModel = viewModel()
+    var email by remember { mutableStateOf("") }
+    var password by remember { mutableStateOf("") }
     Box(
         modifier = Modifier
             .fillMaxSize()
